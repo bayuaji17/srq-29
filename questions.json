@@ -1,0 +1,121 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "question": "Apakah Anda sering menderita sakit kepala?"
+      },
+      {
+        "id": 2,
+        "question": "Apakah Anda kehilangan nafsu makan?"
+      },
+      {
+        "id": 3,
+        "question": "Apakah tidur Anda tidak lelap?"
+      },
+      {
+        "id": 4,
+        "question": "Apakah Anda mudah menjadi takut?"
+      },
+      {
+        "id": 5,
+        "question": "Apakah Anda merasa cemas, tegang dan khawatir?"
+      },
+      {
+        "id": 6,
+        "question": "Apakah tangan Anda gemetar?"
+      },
+      {
+        "id": 7,
+        "question": "Apakah Anda mengalami gangguan pencernaan?"
+      },
+      {
+        "id": 8,
+        "question": "Apakah Anda merasa sulit berpikir jernih?"
+      },
+      {
+        "id": 9,
+        "question": "Apakah Anda merasa tidak bahagia?"
+      },
+      {
+        "id": 10,
+        "question": "Apakah Anda lebih sering menangis?"
+      },
+      {
+        "id": 11,
+        "question": "Apakah Anda merasa sulit untuk menikmati aktivitas sehari-hari?"
+      },
+      {
+        "id": 12,
+        "question": "Apakah Anda mengalami kesulitan untuk mengambil keputusan?"
+      },
+      {
+        "id": 13,
+        "question": "Apakah aktivitas/tugas sehari-hari Anda terbengkalai?"
+      },
+      {
+        "id": 14,
+        "question": "Apakah Anda merasa tidak mampu berperan dalam kehidupan ini?"
+      },
+      {
+        "id": 15,
+        "question": "Apakah Anda kehilangan minat terhadap banyak hal?"
+      },
+      {
+        "id": 16,
+        "question": "Apakah Anda merasa tidak berharga?"
+      },
+      {
+        "id": 17,
+        "question": "Apakah Anda mempunyai pikiran untuk mengakhiri hidup Anda?"
+      },
+      {
+        "id": 18,
+        "question": "Apakah Anda merasa lelah sepanjang waktu?"
+      },
+      {
+        "id": 19,
+        "question": "Apakah Anda merasa tidak enak di perut?"
+      },
+      {
+        "id": 20,
+        "question": "Apakah Anda mudah lelah?"
+      },
+      {
+        "id": 21,
+        "question": "Apakah Anda minum alkohol lebih banyak dari biasanya atau Apakah Anda menggunakan narkoba?"
+      },
+      {
+        "id": 22,
+        "question": "Apakah Anda yakin bahwa seseorang mencoba mencelakai Anda dengan cara tertentu?"
+      },
+      {
+        "id": 23,
+        "question": "Apakah ada yang mengganggu atau hal yang tidak biasa dalam pikiran Anda?"
+      },
+      {
+        "id": 24,
+        "question": "Apakah Anda pernah mendengar suara tanpa tahu sumbernya atau yang orang lain tidak dapat mendengar?"
+      },
+      {
+        "id": 25,
+        "question": "Apakah Anda mengalami mimpi yang mengganggu tentang suatu bencana/musibah atau adakah saat-saat Anda seolah mengalami kembali kejadian bencana itu?"
+      },
+      {
+        "id": 26,
+        "question": "Apakah Anda menghindari kegiatan, tempat, orang atau pikiran yang mengingatkan Anda akan bencana tersebut?"
+      },
+      {
+        "id": 27,
+        "question": "Apakah minat Anda terhadap teman dan kegiatan yang biasa Anda lakukan berkurang?"
+      },
+      {
+        "id": 28,
+        "question": "Apakah Anda merasa sangat terganggu jika berada dalam situasi yang mengingatkan Anda akan bencana atau jika Anda berpikir tentang bencana itu?"
+      },
+      {
+        "id": 29,
+        "question": "Apakah Anda kesulitan memahami atau mengekspresikan perasaan Anda?"
+      }
+    ]
+  }
+  
