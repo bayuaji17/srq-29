@@ -61,7 +61,6 @@ export default function Questions() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const dataUsers = Object.values(usersData);
     const answers = Object.values(questionsAnswer);
     const yesCountNeurosis = answers
       .slice(0, 20)
@@ -75,7 +74,7 @@ export default function Questions() {
       .filter((answer) => answer === "yes").length;
     console.log(questionsAnswer, "dari atas");
     let messages = [];
-    if (yesCountNeurosis >= 5 && yesCountNeurosis <= 7) {
+    if (yesCountNeurosis >= 5) {
       messages.push("Gejala Neurosis");
     }
 
