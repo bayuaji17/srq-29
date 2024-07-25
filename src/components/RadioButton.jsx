@@ -13,7 +13,7 @@ export default function RadioButton({ label, id, value, name, onChange }) {
         />
         <label
           htmlFor={id}
-          className={`border-2 w-28 p-2 rounded-full font-medium text-lg hover:bg-cyan-600 hover:text-white hover:font-semibold peer-checked:font-semibold  peer-checked:bg-cyan-600 peer-checked:text-white text-center cursor-pointer font-sans `}
+          className={`border-2 border-black w-28 p-2 rounded-xl font-medium text-lg hover:bg-cyan-600 hover:text-white hover:font-semibold peer-checked:font-semibold peer-checked:bg-cyan-600 peer-checked:text-white text-center cursor-pointer font-sans`}
         >
           {label}
         </label>

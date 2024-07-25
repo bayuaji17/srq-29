@@ -21,7 +21,7 @@ export default function FormInput({
             value={value}
             onChange={onChange}
             min={min}
-            className="px-4 border-b-2 border-[#f0ebf8] h-10 my-1 w-1/2 placeholder:text-sm"
+            className="px-4 border-b-2 border-[#f0ebf8] h-10 my-1 w-1/2 placeholder:text-sm bg-transparent placeholder:text-slate-500"
           />
         </label>
       </div>

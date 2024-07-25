@@ -3,6 +3,7 @@ import RadioButton from "./RadioButton";
 import questionsData from "../../questions.json";
 import { useState } from "react";
 import FormInput from "./FormInput";
+import { useNavigate } from "react-router-dom";
 export default function Questions() {
   const [usersData, setUsersData] = useState({
     nama: "",
@@ -10,7 +11,6 @@ export default function Questions() {
     jenisKelamin: "Pria",
   });
 
-  const [result, setResult] = useState("");
   const [questionsAnswer, setQuestionAnswer] = useState({
     "answer-1": "",
     "answer-2": "",
@@ -43,6 +43,7 @@ export default function Questions() {
     "answer-29": "",
   });
 
+  const navigate = useNavigate()
   const InputChange = (e) => {
     const { id, value } = e.target;
     if (id === "umur" && value <= 0) {
@@ -60,32 +61,8 @@ export default function Questions() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const dataUsers = Object.values(usersData);
+    // const dataUsers = Object.values(usersData);
     const answers = Object.values(questionsAnswer);
-
-    // const neurosisCount = answers.slice(0, 20).filter(answer => answer === "Ya").length;
-    // const substanceUse = answers[20] === "Ya";
-    // const psychoticCount = answers.slice(21, 24).filter(answer => answer === "Ya").length;
-    // const ptsdCount = answers.slice(24, 29).filter(answer => answer === "Ya").length;
-
-    // let resultMessage = "";
-
-    // if (neurosisCount >= 5 && neurosisCount <= 7) {
-    //   resultMessage += "Indicates psychological issues (neurosis). ";
-    // }
-    // if (substanceUse) {
-    //   resultMessage += "Indicates substance use. ";
-    // }
-    // if (psychoticCount >= 1) {
-    //   resultMessage += "Indicates serious psychotic symptoms, further intervention needed. ";
-    // }
-    // if (ptsdCount >= 1) {
-    //   resultMessage += "Indicates PTSD symptoms. ";
-    // }
-
-    // setResult(resultMessage || "No significant psychological issues detected.");
-    // console.log(result)
-
     const yesCountNeurosis = answers
       .slice(0, 20)
       .filter((answer) => answer === "yes").length;
@@ -96,32 +73,42 @@ export default function Questions() {
     const yesCountPTSD = answers
       .slice(24, 29)
       .filter((answer) => answer === "yes").length;
-
-    let message = `Hasil: + ${dataUsers}`;
-
+    console.log(questionsAnswer, "dari atas");
+    let messages = [];
     if (yesCountNeurosis >= 5 && yesCountNeurosis <= 7) {
-      message += "Anda mungkin mengalami gejala neurosis.\n";
+      messages.push("Gejala Neurosis");
     }
 
     if (yesCountPsychoactive === 1) {
-      message += "Ada indikasi penggunaan zat psikoaktif.\n";
+      messages.push("Indikasi Penggunaan Zat Psikoaktif");
     }
 
     if (yesCountPsychotic >= 1) {
-      message += "Ada gejala psikotik.\n";
+      messages.push("Gejala Psikotik");
     }
 
     if (yesCountPTSD >= 1) {
-      message += "Ada gejala-gejala PTSD (Post Traumatic Stress Disorder).\n";
+      messages.push("Post Traumatic Stress Disorder");
     }
-    setResult(message);
-    console.log(result);
+    if (messages.length === 0) {
+      messages.push("Tidak ada indikasi apapun");
+    }
+
+    const result = {
+      nama: usersData.nama,
+      umur: usersData.umur,
+      jenisKelamin: usersData.jenisKelamin,
+      result: messages,
+    };
+     localStorage.setItem("resultSRQ", JSON.stringify(result));
+     navigate("/result")
   };
 
   return (
     <>
+      {/* Form BIODATA */}
       <form onSubmit={handleSubmit}>
-        <Card className={"bg-white my-5 border-none"}>
+        <Card className={"bg-[#86c5da] my-5 border-none"}>
           <FormInput
             type={"text"}
             placeholder={"Masukkan Inisial / Nama Anda"}
@@ -143,8 +130,8 @@ export default function Questions() {
               id="jenisKelamin"
               name="jenisKelamin"
               defaultValue={"Pria"}
-              className="mt-2 hover:cursor-pointer px-4 border-2 h-11 rounded-xl"
-              onChange={handleInputChange}
+              className="mt-2 hover:cursor-pointer px-4 border-2 h-11 rounded-xl bg-transparent"
+              onChange={InputChange}
             >
               <option value="Pria">Pria</option>
               <option value="Wanita">Wanita</option>
@@ -153,15 +140,18 @@ export default function Questions() {
         </Card>
         <ul>
           {questionsData?.questions?.map((question) => (
-            <Card key={question.id} className={"bg-[#b7ddea] my-6 border-none shadow-lg "}>
+            <Card
+              key={question.id}
+              className={"bg-[#b7ddea] my-6 border-none shadow-lg h-52"}
+            >
               <li>
-                <p className="xl:text-xl after:content-['*'] after:text-red-500 after:pl-1 font-fira">
+                <p className="xl:text-xl after:content-['*'] after:text-red-500 after:pl-1 font-fira text-justify">
                   <span className="after:content-['.'] after:mr-2">
                     {question.id}
                   </span>
                   {question.question}
                 </p>
-                <div className="flex gap-4 ml-10">
+                <div className="flex gap-4 ml-10 py-3 ">
                   <RadioButton
                     label={"Ya"}
                     name={`answer-${question.id}`}
@@ -181,7 +171,7 @@ export default function Questions() {
             </Card>
           ))}
         </ul>
-        <div className="flex w-full justify-start gap-4 mb-52">
+        <div className="flex w-full justify-end gap-4 ">
           <button
             className="bg-red-500 w-32 h-12 text-2xl rounded-xl text-white hover:bg-red-800"
             type="reset"
