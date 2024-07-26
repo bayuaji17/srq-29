@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        fira: [ "Fira Sans", "sans-serif"],   
+        fira: ["Fira Sans", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        openSans: ["Open Sabss", "sans-serif"]
       },
     },
   },
